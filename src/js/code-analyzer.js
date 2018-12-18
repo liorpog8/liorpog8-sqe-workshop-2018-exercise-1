@@ -47,7 +47,7 @@ const parseToTable = (parsedCode) => {
 };
 
 const parseBytype = (lines_list, parsedJson) => {
-    if (parsedJson == null) return null;
+    if (parsedJson == null || !("type" in parsedJson)) return null;
     return funcs[parsedJson.type](lines_list, parsedJson);
 };
 
